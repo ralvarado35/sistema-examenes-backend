@@ -1,5 +1,6 @@
 package com.sistema.examenes.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -30,6 +31,7 @@ public class Usuario {
     
     
     @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="usuario")
+    @JsonIgnore
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
     public Long getId() {
